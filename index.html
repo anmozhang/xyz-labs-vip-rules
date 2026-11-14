@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XYZ Labs · VIP Project Rules</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0b12; --side:#0d0f18; --panel:#121528; --panel2:#191c33; --line:#262a45;
+  --text:#eceef7; --muted:#9aa0bd; --dim:#6d7290;
+  --accent:#a78bfa; --accent-strong:#8b5cf6; --accent-soft:rgba(167,139,250,.14);
+  --green:#34d399; --green-soft:rgba(52,211,153,.14);
+  --red:#f87171; --red-soft:rgba(248,113,113,.14);
+  --amber:#fbbf24; --amber-soft:rgba(251,191,36,.14);
+}
+body.light{
+  --bg:#f5f6fb; --side:#ffffff; --panel:#ffffff; --panel2:#f0f1f8; --line:#e2e4f0;
+  --text:#151729; --muted:#5d6280; --dim:#8a8fab;
+  --accent:#7c3aed; --accent-strong:#7c3aed; --accent-soft:rgba(124,58,237,.10);
+  --green:#059669; --green-soft:rgba(5,150,105,.10);
+  --red:#dc2626; --red-soft:rgba(220,38,38,.09);
+  --amber:#b45309; --amber-soft:rgba(180,83,9,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.6;transition:background .2s,color .2s}
+a{color:inherit;text-decoration:none}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+aside{background:var(--side);border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:21px;padding:0 6px 22px}
+.brand .logo{width:30px;height:30px;border-radius:8px;border:1px solid var(--accent);background:var(--accent-soft);display:grid;place-items:center;color:var(--accent)}
+.brand b{color:var(--accent);font-weight:700}
+.cta{display:block;text-align:center;background:var(--accent);color:#14102a;font-weight:600;border-radius:10px;padding:11px;margin-bottom:22px}
+body.light .cta{color:#fff}
+nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:var(--muted);font-size:14.5px;margin-bottom:3px}
+nav a:hover,nav a.on{background:var(--panel2);color:var(--text)}
+nav .num{width:20px;height:20px;border-radius:6px;border:1px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:600}
+main{min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 28px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent);background:var(--accent-soft);border-radius:12px;padding:9px 14px;font-weight:600}
+.chip small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.toggle{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:999px;padding:8px 14px;font:inherit;font-size:13.5px;cursor:pointer;display:flex;gap:7px;align-items:center}
+.wrap{padding:24px 28px 60px;max-width:1080px}
+.note{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px;scroll-margin-top:16px}
+h1{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:19px;margin:0}
+h3{font-size:15.5px;margin:0 0 4px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.head .sub{color:var(--muted);font-size:13px}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.b-green{background:var(--green-soft);color:var(--green)}
+.b-red{background:var(--red-soft);color:var(--red)}
+.b-purple{background:var(--accent-soft);color:var(--accent)}
+.b-amber{background:var(--amber-soft);color:var(--amber)}
+
+/* flow */
+.flow{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:center}
+.paths{display:grid;gap:12px}
+.path{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.path .tag{font-size:12px;color:var(--muted)}
+.path .big{font-weight:700;font-size:16px}
+.arrow{display:flex;justify-content:center;color:var(--accent)}
+.vip{border:1px solid var(--accent);background:linear-gradient(160deg,var(--accent-soft),transparent);border-radius:14px;padding:18px;text-align:center}
+.vip .crown{font-size:28px}
+.vip .t{font-size:20px;font-weight:700}
+.or{text-align:center;font-size:12px;color:var(--dim);font-weight:600;letter-spacing:.1em}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.stat{background:var(--panel2);border-radius:12px;padding:14px 16px}
+.stat .l{font-size:13px;color:var(--muted)}
+.stat .v{font-size:24px;font-weight:700}
+.rows{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .k{color:var(--muted)}
+.row .val{font-weight:600;text-align:right}
+
+/* streak */
+.streak{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 14px}
+.dot{width:74px;border-radius:12px;padding:10px 6px;text-align:center;border:1px solid var(--line);background:var(--panel2);font-size:12px;color:var(--muted)}
+.dot .ic{font-size:18px;font-weight:700;display:block}
+.dot.ok{border-color:var(--green);background:var(--green-soft);color:var(--green)}
+.dot.no{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+.dot.win{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.counter{font-size:14px;color:var(--muted);margin-bottom:12px}
+.counter b{color:var(--text);font-size:18px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:8px 14px;font:inherit;font-size:13.5px;cursor:pointer;font-weight:500}
+.btn:hover{border-color:var(--accent)}
+.btn.g{border-color:var(--green);color:var(--green)}
+.btn.r{border-color:var(--red);color:var(--red)}
+
+/* rule cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rule{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;gap:14px}
+.rule .n{flex:none;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:13px}
+.rule p{margin:0;color:var(--muted);font-size:14px}
+.rule .st{margin-top:8px}
+
+/* checker */
+.form{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:5px}
+input[type=number],select{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;font:inherit}
+.result{border-radius:12px;padding:14px 16px;font-weight:500}
+.result.ok{background:var(--green-soft);color:var(--green)}
+.result.no{background:var(--red-soft);color:var(--red)}
+.result.wait{background:var(--amber-soft);color:var(--amber)}
+.result ul{margin:6px 0 0;padding-left:18px;font-weight:400}
+
+.gift{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.acc{width:92px;border-radius:12px;padding:12px 8px;text-align:center;border:1px solid var(--red);background:var(--red-soft);color:var(--red);font-size:12.5px;font-weight:600}
+.acc.free{border-color:var(--green);background:var(--green-soft);color:var(--green)}
+.plus{color:var(--dim);font-weight:700}
+.warn{border-left:3px solid var(--amber);background:var(--amber-soft);padding:12px 14px;border-radius:8px;color:var(--text);font-size:14px;margin-top:14px}
+ol.faq{margin:0;padding-left:20px}
+ol.faq li{margin-bottom:12px}
+ol.faq li b{display:block}
+ol.faq li span{color:var(--muted);font-size:14px}
+
+
+.f4{grid-template-columns:repeat(4,1fr)}
+.tiercards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.tier{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
+.tier.whale{border-color:var(--accent);background:linear-gradient(160deg,var(--accent-soft),var(--panel2))}
+.tier .tn{font-size:12px;color:var(--muted)}
+.tier .tt{font-weight:700;font-size:16px}
+.tier .tsize{font-size:26px;font-weight:700;margin:6px 0 2px}
+.tier .tfee{color:var(--amber);font-weight:600}
+.tier .tfee span{color:var(--muted);font-weight:400;font-size:13px}
+.tablewrap{border:1px solid var(--line);border-radius:12px;overflow-x:auto}
+.ttable{width:100%;border-collapse:collapse;min-width:620px}
+.ttable th,.ttable td{padding:12px 16px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+.ttable thead th{border-top:0;background:var(--panel2);font-size:13px;color:var(--muted);font-weight:600}
+.ttable td:first-child{color:var(--muted)}
+.ttable td:not(:first-child){font-weight:600}
+.ttable small{display:block;color:var(--muted);font-weight:400;font-size:12.5px}
+@media (max-width:860px){.tiercards{grid-template-columns:1fr}}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr}
+  aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+  nav{display:flex;flex-wrap:wrap;gap:4px}
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);padding:6px 0}
+  .stats,.grid,.form{grid-template-columns:1fr}
+  .wrap,.top{padding-left:16px;padding-right:16px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <div class="brand"><span class="logo">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 17l6-6 4 4 6-7"/><path d="M15 8h5v5"/></svg>
+  </span>XYZ <b>Labs</b></div>
+  <a class="cta" href="#checker">Check my eligibility</a>
+  <nav>
+    <a href="#overview" class="on"><span class="num">◆</span>Overview</a>
+    <a href="#xy"><span class="num">1</span>X &amp; Y Mode</a>
+    <a href="#z"><span class="num">2</span>Z Mode</a>
+    <a href="#vip"><span class="num">3</span>VIP Benefits</a>
+    <a href="#tiers"><span class="num">4</span>VIP Tiers</a>
+    <a href="#gift"><span class="num">5</span>Consolation Prize</a>
+    <a href="#faq"><span class="num">?</span>FAQ</a>
+  </nav>
+</aside>
+
+<main>
+  <div class="top">
+    <div class="chip"><span>👑</span><div>VIP Project<small>Qualification rules</small></div></div>
+    <button class="toggle" id="themeBtn" type="button">☀ <span>Light mode</span></button>
+  </div>
+
+  <div class="wrap">
+    <p class="note">How to qualify for the VIP Project, what VIP gives you and what it costs, and how the consolation prize works.</p>
+
+    <!-- OVERVIEW -->
+    <section class="card" id="overview">
+      <h1>Two paths, pick one → VIP Project</h1>
+      <p class="note" style="margin-bottom:20px">Follow the path for the mode you trade. Meet its requirement and you can move into VIP.</p>
+      <div class="flow">
+        <div class="paths">
+          <div class="path">
+            <div class="tag">Path A · X Mode / Y Mode</div>
+            <div class="big">50–100 trades within 4 months</div>
+            <span class="badge b-red">No failed accounts</span>
+          </div>
+          <div class="or">— OR —</div>
+          <div class="path">
+            <div class="tag">Path B · Z Mode</div>
+            <div class="big">3 payouts in a row</div>
+            <span class="badge b-amber">Miss one and the count restarts</span>
+          </div>
+        </div>
+        <div class="arrow"><svg width="36" height="24" viewBox="0 0 36 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12h30M24 4l8 8-8 8"/></svg></div>
+        <div class="vip">
+          <div class="crown">👑</div>
+          <div class="t">VIP Project</div>
+          <div style="margin:10px 0;display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+            <span class="badge b-green">External hedging allowed</span>
+            <span class="badge b-purple">50% Split</span>
+            <span class="badge b-amber">From $89 / month</span>
+            <span class="badge b-red">Reset +$89</span>
+          </div>
+          <div style="font-size:13px;color:var(--muted)">Monthly subscription</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- XY -->
+    <section class="card" id="xy">
+      <div class="head"><h2>Path A · X &amp; Y Mode</h2><span class="sub">Trade count + zero fails</span></div>
+      <div class="stats">
+        <div class="stat"><div class="l">Window</div><div class="v">4 months</div></div>
+        <div class="stat"><div class="l">Trades</div><div class="v">50 – 100</div></div>
+        <div class="stat"><div class="l">Failed accounts</div><div class="v" style="color:var(--green)">0</div></div>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="k">Applies to</span><span class="val">X Mode, Y Mode</span></div>
+        <div class="row"><span class="k">Evaluation period</span><span class="val">4 months</span></div>
+        <div class="row"><span class="k">Required trades</span><span class="val">50 – 100</span></div>
+        <div class="row"><span class="k">Account status</span><span class="val"><span class="badge b-red">No failed account during the period</span></span></div>
+      </div>
+    </section>
+
+    <!-- Z -->
+    <section class="card" id="z">
+      <div class="head"><h2>Path B · Z Mode</h2><span class="sub">3 consecutive payouts, a miss resets to zero</span></div>
+      <p style="margin:0 0 10px;color:var(--muted)">Try it below: each payout adds 1 to the streak. Miss one and the streak goes back to 0. Hit 3 in a row to unlock VIP.</p>
+      <div class="counter">Current payout streak: <b id="zCount">0</b> / 3</div>
+      <div class="streak" id="zStreak"></div>
+      <div class="btns">
+        <button class="btn g" id="zPay" type="button">✓ Got a payout</button>
+        <button class="btn r" id="zMiss" type="button">✗ Missed a payout</button>
+        <button class="btn" id="zDemo" type="button">Play example</button>
+        <button class="btn" id="zReset" type="button">Clear</button>
+      </div>
+      <div id="zMsg" class="result wait" style="margin-top:14px">Not started yet.</div>
+    </section>
+
+    <!-- VIP -->
+    <section class="card" id="vip">
+      <div class="head"><h2>VIP Project benefits &amp; fees</h2><span class="badge b-purple">VIP</span></div>
+      <div class="grid">
+        <div class="rule"><span class="n">1</span><div><h3>External hedging allowed</h3><p>Once you are in VIP, you can hedge externally.</p><div class="st"><span class="badge b-green">Unlocked</span></div></div></div>
+        <div class="rule"><span class="n">2</span><div><h3>50% profit split</h3><p>VIP account profits are split 50 / 50.</p><div class="st"><span class="badge b-purple">Split 50%</span></div></div></div>
+        <div class="rule"><span class="n">3</span><div><h3>Monthly subscription by tier</h3><p>Starter $89, Pro $229, Whale $429 per month. See <a href="#tiers" style="color:var(--accent)">VIP tiers</a> for the full breakdown.</p><div class="st"><span class="badge b-amber">Monthly</span></div></div></div>
+        <div class="rule"><span class="n">4</span><div><h3>Charged even if you fail</h3><p>The fee is due every month whether or not your account failed. A blown account does not waive it.</p><div class="st"><span class="badge b-red">No waiver</span></div></div></div>
+        <div class="rule"><span class="n">5</span><div><h3>Reset after a fail · +$89</h3><p>If your VIP account fails, you can reset it for an extra $89. This is paid on top of the monthly subscription.</p><div class="st"><span class="badge b-amber">Reset $89</span></div></div></div>
+      </div>
+
+      <div style="margin-top:20px">
+        <h3 style="margin-bottom:10px">Calculator: what you actually take home in VIP</h3>
+        <div class="form f4">
+          <div><label for="vTier">VIP tier</label><select id="vTier"><option value="89">Starter · $89 / month</option><option value="229">Pro · $229 / month</option><option value="429">Whale · $429 / month</option></select></div>
+          <div><label for="vProfit">Account profit ($)</label><input type="number" id="vProfit" value="1000" min="0" step="50"></div>
+          <div><label for="vMonths">Months subscribed</label><input type="number" id="vMonths" value="1" min="1" step="1"></div>
+          <div><label for="vResets">Resets ($89 each)</label><input type="number" id="vResets" value="0" min="0" step="1"></div>
+          </div>
+        <div class="result wait" id="vOut" style="margin-bottom:12px"></div>
+        <div class="rows" id="vRows"></div>
+      </div>
+    </section>
+
+
+    <!-- TIERS -->
+    <section class="card" id="tiers">
+      <div class="head"><h2>VIP tiers</h2><span class="sub">Same 2x leverage and 50% split on every tier</span></div>
+      <div class="tiercards">
+        <div class="tier"><div class="tn">Tier 1</div><div class="tt">VIP Starter</div><div class="tsize">$5,000</div><div class="tfee">$89<span> / month</span></div></div>
+        <div class="tier"><div class="tn">Tier 2</div><div class="tt">VIP Pro</div><div class="tsize">$15,000</div><div class="tfee">$229<span> / month</span></div></div>
+        <div class="tier whale"><div class="tn">Tier 3</div><div class="tt">VIP Whale 🐋</div><div class="tsize">$30,000</div><div class="tfee">$429<span> / month</span></div></div>
+      </div>
+      <div class="tablewrap">
+      <table class="ttable">
+        <thead><tr><th>Setting</th><th>Tier 1 · VIP Starter</th><th>Tier 2 · VIP Pro</th><th>Tier 3 · VIP Whale</th></tr></thead>
+        <tbody>
+          <tr><td>Account size</td><td>$5,000</td><td>$15,000</td><td>$30,000</td></tr>
+          <tr><td>Max leverage</td><td>2x <small>max position $10,000</small></td><td>2x <small>max position $30,000</small></td><td>2x <small>max position $60,000</small></td></tr>
+          <tr><td>Max loss</td><td>$300 <small>6%</small></td><td>$750 <small>5%</small></td><td>$1,500 <small>5%</small></td></tr>
+          <tr><td>Daily loss</td><td>$150 <small>3%</small></td><td>$375 <small>2.5%</small></td><td>$750 <small>2.5%</small></td></tr>
+          <tr><td>Monthly fee</td><td>$89 / month</td><td>$229 / month</td><td>$429 / month</td></tr>
+          <tr><td>Profit split</td><td>50%</td><td>50%</td><td>50%</td></tr>
+          <tr><td>Payout cycle &amp; minimum</td><td>Every 7 days <small>min $150</small></td><td>Every 7 days <small>min $350</small></td><td>Every 7 days <small>min $700</small></td></tr>
+          <tr><td>Payout cap per cycle</td><td>$1,000 <small>on $2k total profit</small></td><td>$2,500 <small>on $5k total profit</small></td><td>$5,000 <small>on $10k total profit</small></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- GIFT -->
+    <section class="card" id="gift">
+      <div class="head"><h2>Consolation prize</h2><span class="badge b-green">Free account</span></div>
+      <p style="margin:0 0 14px;color:var(--muted)">Lose 3 accounts in a row and you get 1 free account.</p>
+      <div class="gift">
+        <div class="acc">Account 1<br>Failed</div><span class="plus">+</span>
+        <div class="acc">Account 2<br>Failed</div><span class="plus">+</span>
+        <div class="acc">Account 3<br>Failed</div><span class="plus">=</span>
+        <div class="acc free">🎁 Free<br>account ×1</div>
+      </div>
+    </section>
+
+    <!-- CHECKER -->
+    <section class="card" id="checker">
+      <div class="head"><h2>Eligibility check</h2><span class="sub">Enter your numbers to see if you qualify</span></div>
+      <div class="form">
+        <div><label for="cMode">Your mode</label>
+          <select id="cMode"><option value="xy">X / Y Mode</option><option value="z">Z Mode</option></select></div>
+        <div class="xyOnly"><label for="cMonths">Months traded</label><input type="number" id="cMonths" value="4" min="0" step="1"></div>
+        <div class="xyOnly"><label for="cTrades">Number of trades</label><input type="number" id="cTrades" value="60" min="0" step="1"></div>
+        <div class="xyOnly"><label for="cFailed">Failed accounts in the period</label><input type="number" id="cFailed" value="0" min="0" step="1"></div>
+        <div class="zOnly" style="display:none"><label for="cStreak">Current consecutive payouts</label><input type="number" id="cStreak" value="2" min="0" step="1"></div>
+      </div>
+      <div class="result" id="cOut"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card" id="faq">
+      <div class="head"><h2>FAQ</h2></div>
+      <ol class="faq">
+        <li><b>What if I fail once on X / Y Mode?</b><span>Path A requires zero failed accounts during the period, so a fail means you don't meet this path.</span></li>
+        <li><b>I had 2 payouts on Z Mode, then missed one?</b><span>The streak resets to zero and you start again from the first payout.</span></li>
+        <li><b>My VIP account failed this month. Do I still pay the monthly fee?</b><span>Yes. VIP is a subscription charged every month ($89 / $229 / $429 depending on tier), regardless of whether the account failed.</span></li>
+        <li><b>Can I reset a VIP account after it fails?</b><span>Yes. A reset costs an extra $89, on top of the monthly subscription.</span></li>
+        <li><b>How are VIP profits split?</b><span>50% split: profits are shared half and half.</span></li>
+        <li><b>What are the VIP tiers?</b><span>Starter ($5k, $89/month), Pro ($15k, $229/month) and Whale ($30k, $429/month). All tiers use 2x max leverage, a 50% split and payouts every 7 days.</span></li>
+        <li><b>How do I get the consolation prize?</b><span>Lose 3 accounts in a row and you receive 1 free account.</span></li>
+      </ol>
+    </section>
+  </div>
+</main>
+</div>
+
+<script>
+(function(){
+  // theme
+  var btn=document.getElementById('themeBtn');
+  function setTheme(l){document.body.classList.toggle('light',l);btn.querySelector('span').textContent=l?'Dark mode':'Light mode';btn.firstChild.textContent=l?'☾ ':'☀ ';}
+  try{ if(localStorage.getItem('xyzTheme')==='light') setTheme(true);}catch(e){}
+  btn.addEventListener('click',function(){var l=!document.body.classList.contains('light');setTheme(l);try{localStorage.setItem('xyzTheme',l?'light':'dark')}catch(e){}});
+
+  // nav highlight
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=secs.indexOf(e.target);links.forEach(function(l,j){l.classList.toggle('on',i===j)})}})},{rootMargin:'-30% 0px -60% 0px'});
+    secs.forEach(function(s){s&&io.observe(s)});
+  }
+
+  // Z streak
+  var hist=[],count=0,won=false,timer=null;
+  var elC=document.getElementById('zCount'),elS=document.getElementById('zStreak'),elM=document.getElementById('zMsg');
+  function render(){
+    elC.textContent=count;
+    elS.innerHTML=hist.map(function(h,i){
+      var cls=h.t==='p'?(h.win?'win':'ok'):'no';
+      var ic=h.t==='p'?(h.win?'👑':'✓'):'✗';
+      var lb=h.t==='p'?('Streak '+h.c):'Reset';
+      return '<div class="dot '+cls+'"><span class="ic">'+ic+'</span>Period '+(i+1)+'<br>'+lb+'</div>';
+    }).join('');
+    if(!hist.length){elM.className='result wait';elM.textContent='Not started yet.';}
+    else if(won){elM.className='result ok';elM.textContent='3 payouts in a row → VIP Project unlocked 🎉';}
+    else if(hist[hist.length-1].t==='m'){elM.className='result no';elM.textContent='Missed one. Streak is back to 0, start again.';}
+    else{elM.className='result wait';elM.textContent=(3-count)+' more payout'+(3-count>1?'s':'')+' in a row to unlock VIP.';}
+  }
+  function pay(){if(won)return;count++;var w=count>=3;if(w)won=true;hist.push({t:'p',c:count,win:w});render();}
+  function miss(){if(won)return;count=0;hist.push({t:'m'});render();}
+  function reset(){clearInterval(timer);hist=[];count=0;won=false;render();}
+  document.getElementById('zPay').onclick=function(){clearInterval(timer);pay()};
+  document.getElementById('zMiss').onclick=function(){clearInterval(timer);miss()};
+  document.getElementById('zReset').onclick=reset;
+  document.getElementById('zDemo').onclick=function(){reset();var seq=['p','p','m','p','p','p'],i=0;timer=setInterval(function(){if(i>=seq.length){clearInterval(timer);return}seq[i++]==='p'?pay():miss()},650)};
+  render();
+
+  // VIP calc
+  var vP=document.getElementById('vProfit'),vM=document.getElementById('vMonths'),vX=document.getElementById('vResets'),vT=document.getElementById('vTier'),vO=document.getElementById('vOut'),vR=document.getElementById('vRows');
+  function f(n){return (n<0?'−$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+  function calc(){
+    var p=Math.max(0,parseFloat(vP.value)||0),m=Math.max(1,parseInt(vM.value)||1);
+    var r=Math.max(0,parseInt(vX.value)||0);var share=p*0.5,mf=parseInt(vT.value)||89,fee=mf*m,rf=89*r,net=share-fee-rf;
+    vO.className='result '+(net>=0?'ok':'no');
+    vO.textContent='Net: '+f(net);
+    vR.innerHTML='<div class="row"><span class="k">Account profit</span><span class="val">'+f(p)+'</span></div>'+
+      '<div class="row"><span class="k">Your share (50%)</span><span class="val">'+f(share)+'</span></div>'+
+      '<div class="row"><span class="k">Subscription ($'+mf+' × '+m+' month'+(m>1?'s':'')+')</span><span class="val" style="color:var(--red)">−'+f(fee).replace('−','')+'</span></div>'+
+      '<div class="row"><span class="k">Resets ($89 × '+r+')</span><span class="val" style="color:var(--red)">−'+f(rf).replace('−','')+'</span></div>'+
+      '<div class="row"><span class="k">Net take-home</span><span class="val" style="color:'+(net>=0?'var(--green)':'var(--red)')+'">'+f(net)+'</span></div>';
+  }
+  vP.oninput=calc;vM.oninput=calc;vX.oninput=calc;vT.onchange=calc;calc();
+
+  // checker
+  var cMode=document.getElementById('cMode'),cOut=document.getElementById('cOut');
+  var ids=['cMonths','cTrades','cFailed','cStreak'].map(function(i){return document.getElementById(i)});
+  function check(){
+    var z=cMode.value==='z';
+    [].forEach.call(document.querySelectorAll('.xyOnly'),function(e){e.style.display=z?'none':''});
+    [].forEach.call(document.querySelectorAll('.zOnly'),function(e){e.style.display=z?'':'none'});
+    if(z){
+      var s=parseInt(ids[3].value)||0;
+      if(s>=3){cOut.className='result ok';cOut.innerHTML='✓ '+s+' payouts in a row. You qualify for the VIP Project.';}
+      else{cOut.className='result wait';cOut.innerHTML=(3-s)+' more consecutive payout'+(3-s>1?'s':'')+' needed.<ul><li>Remember: one miss resets the count to 0.</li></ul>';}
+      return;
+    }
+    var mo=parseInt(ids[0].value)||0,t=parseInt(ids[1].value)||0,fl=parseInt(ids[2].value)||0,issues=[];
+    if(fl>0) issues.push({k:'no',t:fl+' failed account'+(fl>1?'s':'')+' during the period (must be 0)'});
+    if(mo<4) issues.push({k:'wait',t:(4-mo)+' more month'+(4-mo>1?'s':'')+' to go (4 months required)'});
+    if(t<50) issues.push({k:'wait',t:(50-t)+' more trade'+(50-t>1?'s':'')+' needed (50–100 required)'});
+    if(t>100) issues.push({k:'no',t:t+' trades is above the 50–100 range'});
+    if(!issues.length){cOut.className='result ok';cOut.innerHTML='✓ '+mo+' months, '+t+' trades, 0 fails. You qualify for the VIP Project.';return;}
+    var hard=issues.some(function(i){return i.k==='no'});
+    cOut.className='result '+(hard?'no':'wait');
+    cOut.innerHTML=(hard?'✗ Not eligible yet:':'In progress, not there yet:')+'<ul>'+issues.map(function(i){return '<li>'+i.t+'</li>'}).join('')+'</ul>';
+  }
+  cMode.onchange=check;ids.forEach(function(i){i.oninput=check});check();
+})();
+</script>
+</body>
+</html>
