@@ -201,7 +201,7 @@ ol.faq li span{color:var(--muted);font-size:14px}
           <div class="t">VIP Project</div>
           <div style="margin:10px 0;display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
             <span class="badge b-green">External hedging allowed</span>
-            <span class="badge b-purple">50% Split</span>
+            <span class="badge b-purple">60% Split</span>
             <span class="badge b-amber">From $89 / month</span>
             <span class="badge b-red">Reset +$89</span>
           </div>
@@ -246,7 +246,7 @@ ol.faq li span{color:var(--muted);font-size:14px}
       <div class="head"><h2>VIP Project benefits &amp; fees</h2><span class="badge b-purple">VIP</span></div>
       <div class="grid">
         <div class="rule"><span class="n">1</span><div><h3>External hedging allowed</h3><p>Once you are in VIP, you can hedge externally.</p><div class="st"><span class="badge b-green">Unlocked</span></div></div></div>
-        <div class="rule"><span class="n">2</span><div><h3>50% profit split</h3><p>VIP account profits are split 50 / 50.</p><div class="st"><span class="badge b-purple">Split 50%</span></div></div></div>
+        <div class="rule"><span class="n">2</span><div><h3>60% profit split</h3><p>You keep 60% of VIP account profits.</p><div class="st"><span class="badge b-purple">Split 60%</span></div></div></div>
         <div class="rule"><span class="n">3</span><div><h3>Monthly subscription by tier</h3><p>Starter $89, Pro $229, Whale $429 per month. See <a href="#tiers" style="color:var(--accent)">VIP tiers</a> for the full breakdown.</p><div class="st"><span class="badge b-amber">Monthly</span></div></div></div>
         <div class="rule"><span class="n">4</span><div><h3>Charged even if you fail</h3><p>The fee is due every month whether or not your account failed. A blown account does not waive it.</p><div class="st"><span class="badge b-red">No waiver</span></div></div></div>
         <div class="rule"><span class="n">5</span><div><h3>Reset after a fail · +$89</h3><p>If your VIP account fails, you can reset it for an extra $89. This is paid on top of the monthly subscription.</p><div class="st"><span class="badge b-amber">Reset $89</span></div></div></div>
@@ -268,7 +268,7 @@ ol.faq li span{color:var(--muted);font-size:14px}
 
     <!-- TIERS -->
     <section class="card" id="tiers">
-      <div class="head"><h2>VIP tiers</h2><span class="sub">Same 2x leverage and 50% split on every tier</span></div>
+      <div class="head"><h2>VIP tiers</h2><span class="sub">Same 2x leverage and 60% split on every tier</span></div>
       <div class="tiercards">
         <div class="tier"><div class="tn">Tier 1</div><div class="tt">VIP Starter</div><div class="tsize">$5,000</div><div class="tfee">$89<span> / month</span></div></div>
         <div class="tier"><div class="tn">Tier 2</div><div class="tt">VIP Pro</div><div class="tsize">$15,000</div><div class="tfee">$229<span> / month</span></div></div>
@@ -283,7 +283,7 @@ ol.faq li span{color:var(--muted);font-size:14px}
           <tr><td>Max loss</td><td>$300 <small>6%</small></td><td>$750 <small>5%</small></td><td>$1,500 <small>5%</small></td></tr>
           <tr><td>Daily loss</td><td>$150 <small>3%</small></td><td>$375 <small>2.5%</small></td><td>$750 <small>2.5%</small></td></tr>
           <tr><td>Monthly fee</td><td>$89 / month</td><td>$229 / month</td><td>$429 / month</td></tr>
-          <tr><td>Profit split</td><td>50%</td><td>50%</td><td>50%</td></tr>
+          <tr><td>Profit split</td><td>60%</td><td>60%</td><td>60%</td></tr>
           <tr><td>Payout cycle &amp; minimum</td><td>Every 7 days <small>min $150</small></td><td>Every 7 days <small>min $350</small></td><td>Every 7 days <small>min $700</small></td></tr>
           <tr><td>Payout cap per cycle</td><td>$1,000 <small>on $2k total profit</small></td><td>$2,500 <small>on $5k total profit</small></td><td>$5,000 <small>on $10k total profit</small></td></tr>
         </tbody>
@@ -325,8 +325,8 @@ ol.faq li span{color:var(--muted);font-size:14px}
         <li><b>I had 2 payouts on Z Mode, then missed one?</b><span>The streak resets to zero and you start again from the first payout.</span></li>
         <li><b>My VIP account failed this month. Do I still pay the monthly fee?</b><span>Yes. VIP is a subscription charged every month ($89 / $229 / $429 depending on tier), regardless of whether the account failed.</span></li>
         <li><b>Can I reset a VIP account after it fails?</b><span>Yes. A reset costs an extra $89, on top of the monthly subscription.</span></li>
-        <li><b>How are VIP profits split?</b><span>50% split: profits are shared half and half.</span></li>
-        <li><b>What are the VIP tiers?</b><span>Starter ($5k, $89/month), Pro ($15k, $229/month) and Whale ($30k, $429/month). All tiers use 2x max leverage, a 50% split and payouts every 7 days.</span></li>
+        <li><b>How are VIP profits split?</b><span>You get a 60% profit split.</span></li>
+        <li><b>What are the VIP tiers?</b><span>Starter ($5k, $89/month), Pro ($15k, $229/month) and Whale ($30k, $429/month). All tiers use 2x max leverage, a 60% split and payouts every 7 days.</span></li>
         <li><b>How do I get the consolation prize?</b><span>Lose 3 accounts in a row and you receive 1 free account.</span></li>
       </ol>
     </section>
@@ -380,11 +380,11 @@ ol.faq li span{color:var(--muted);font-size:14px}
   function f(n){return (n<0?'−$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
   function calc(){
     var p=Math.max(0,parseFloat(vP.value)||0),m=Math.max(1,parseInt(vM.value)||1);
-    var r=Math.max(0,parseInt(vX.value)||0);var share=p*0.5,mf=parseInt(vT.value)||89,fee=mf*m,rf=89*r,net=share-fee-rf;
+    var r=Math.max(0,parseInt(vX.value)||0);var share=p*0.6,mf=parseInt(vT.value)||89,fee=mf*m,rf=89*r,net=share-fee-rf;
     vO.className='result '+(net>=0?'ok':'no');
     vO.textContent='Net: '+f(net);
     vR.innerHTML='<div class="row"><span class="k">Account profit</span><span class="val">'+f(p)+'</span></div>'+
-      '<div class="row"><span class="k">Your share (50%)</span><span class="val">'+f(share)+'</span></div>'+
+      '<div class="row"><span class="k">Your share (60%)</span><span class="val">'+f(share)+'</span></div>'+
       '<div class="row"><span class="k">Subscription ($'+mf+' × '+m+' month'+(m>1?'s':'')+')</span><span class="val" style="color:var(--red)">−'+f(fee).replace('−','')+'</span></div>'+
       '<div class="row"><span class="k">Resets ($89 × '+r+')</span><span class="val" style="color:var(--red)">−'+f(rf).replace('−','')+'</span></div>'+
       '<div class="row"><span class="k">Net take-home</span><span class="val" style="color:'+(net>=0?'var(--green)':'var(--red)')+'">'+f(net)+'</span></div>';
